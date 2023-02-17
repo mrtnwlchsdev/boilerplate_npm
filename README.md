@@ -70,3 +70,16 @@ Una dependencia es eliminada del proyecto cuando esta es removida del archivo pa
              ̶"̶p̶a̶c̶k̶a̶g̶e̶_̶n̶a̶m̶e̶"̶:̶ ̶"̶1̶.̶3̶.̶1̶0̶"̶
         }
     }
+
+## Node.js y express
+
+Node.js es un entorno de ejecucion que permite ejecutar codigo de JavaScript fuera del navegador web.
+
+### Servidor express
+
+Express es un paquete de npm ampliamente utilizado para la creacion de servidores y para el manejo del enrutamiento en una aplicacion.
+
+    const express = require('express')
+    const app = express()
+
+Las anteriores lineas permiten requerir el paquete express y asignarlo a una variable de JavaScript.
