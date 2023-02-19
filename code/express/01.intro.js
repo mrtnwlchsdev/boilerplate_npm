@@ -16,6 +16,7 @@ const app = express() // Definicion de objeto de express
 app.listen(8000)
 
 // Peticion HTTP GET realizada mediante el objeto de express
+// El verbo GET es utilizado cuando se requiere buscar algun tipo de informacion en el servidor, sin realizar modificaciones adicionales
 app.get('/',(req,res)=> {
     res.send('<h1>Hello World</h1>')
 })

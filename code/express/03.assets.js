@@ -8,7 +8,7 @@ const app = express()
  * Los middleware son funciones que interceptan las el manejo de las rutas, añadiendo algun tipo de informacion adicional
  * Los middleware son montados mediante el metodo use(). Este metodo recibe 2 parametros:
     - Ruta en la cual se ejecutara la funcion del middleware (Si no se especifica, esta funcion sera ejecutada para todas las rutas de la aplicacion)
-    - Funcion del middleware
+    - Funcion del middleware express.static(path)
 */
 
 app.use(express.static(__dirname))
