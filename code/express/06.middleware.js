@@ -25,3 +25,19 @@ app.use((req,res,next) => {
 app.get('/', (req,res) => {
   res.send('Hello World')
 })
+
+// Los middleware pueden ser encadenados dentro de la definicion de una ruta
+
+app.get('/user', (req,res,next) => {
+  req.user = getUser() // Hipotetica operacion asincrona
+  next()
+}, (req,res) => {
+  res.json(req.user)
+})
+
+/**
+ * El encadenamiento resulta util para dividir las operaciones del servidor en unidades mas pequeñas
+ * Permite realizar validaciones de los datos, bloqueando la ejecucion del middleware actual en caso de errores, otorgandole el control a la siguiente funcion diseñada especificamente para el manejo de errores.
+*/
+
+app.listen(8000)
