@@ -16,23 +16,23 @@ const app = express()
 */
 
 app.use((req,res,next) => {
-  console.log(req.method) // GET
-  next()
+   console.log(req.method) // GET
+   next()
 })
 
 // Un middleware puede ser montado en una ruta especifica usando la notacion app.METHOD(path, MIDDLEWARE)
 
 app.get('/', (req,res) => {
-  res.send('Hello World')
+   res.send('Hello World')
 })
 
 // Los middleware pueden ser encadenados dentro de la definicion de una ruta
 
 app.get('/user', (req,res,next) => {
   req.user = getUser() // Hipotetica operacion asincrona
-  next()
+   next()
 }, (req,res) => {
-  res.json(req.user)
+   res.json(req.user)
 })
 
 /**
